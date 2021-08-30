@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./rsc/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <title>JobsNET</title>
+</head>
+
+<body>
+
+    <header>
+        <div id="divheader">
+            <img src="./img/logo.png" width="40%" alt="logo JobsNET"> 
+            <p>Especialista em recrutamento e seleção de profissionais nas mais diversas áreas.</p>
+            <h3>VAMOS JUNTOS CONQUISTAR O SEU PRÓXIMO EMPREGO </h3>
+        </div>
+        
+    </header>
+
+    <main>
+        <div class="container" id="principal">
+
+            <h4>Cadastre seu currículo</h4>
+
+            <form class="form" action="" method="post">
+
+                <h5>Sobre você</h5>
+                <div class="form-group">
+                    <label for="cargoPretendido">Cargo:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="text" id="cargoPretendido" name="cargo">
+                    <small class="form-text text-muted">Informe o cargo pretendido.</small>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="text" id="nome" name="nome">
+                    <small class="form-text text-muted">Informe o nome completo.</small>
+                </div>
+                <div class="form-group">
+                    <label for="dataNascimento">Data de nascimeto:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="data" id="dataNascimento" name="dataNascimento">
+                    <small class="form-text text-muted">Ex.: 01/01/1970</small>
+                </div>
+                <div class="form-group">
+                    <label for="estadoCivil">Estado Civil:</label>
+                    <span class="text-danger"></span>
+                    <select required class="form-control" id="estadoCivil" name="estadoCivil">
+                        <option>Selecione</option>
+                        <option>Solteiro(a)</option>
+                        <option>Casado(a)</option>
+                        <option>União Estável</option>
+                        <option>Separado(a)</option>
+                        <option>Divorciado(a)</option>
+                        <option>Viúvo(a)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="genero">Gênero:</label>
+                    <span class="text-danger"></span>
+                    <select required class="form-control" id="genero" name="genero">
+                        <option>Selecione</option>
+                        <option>Feminino cis</option>
+                        <option>Feminino trans</option>
+                        <option>Masculino cis</option>
+                        <option>Masculino trans</option>
+                        <option>Não binário</option>
+                        <option>Prefiro não declarar</option>
+                    </select>
+                </div>
+
+                <h5>Endereço</h5>
+
+                <div class="form-group">
+                    <label for="cep">CEP: </label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="text" maxlength="9" id="cep">
+                    <small class="form-text text-muted">00000-000</small>
+                </div>
+                <div class="form-group">
+                    <label for="logradouro">Logradouro:</label>
+                    <input class="form-control" type="text" id="logradouro" name="logradouro">
+                </div>
+                <div class="form-group">
+                    <label for="numeroLogradouro">Número:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="text" id="numeroLogradouro" name="numeroLogradouro">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="localidade">Cidade:</label>
+                    <input class="form-control" type="text" id="localidade" name="localidade">
+                </div>
+                <div class="form-group">
+                    <label for="uf">UF:</label>
+                    <input class="form-control" for="uf" id=uf name="uf">
+                </div>
+
+                <h5>Contato</h5>
+
+                <div class="form-group">
+                    <label for="telefone1">Telefone 1:</label>
+                    <input class="form-control" type="tel" id="telefone1" name="tel" onkeypress="mascaraTel(this)">
+                    <small class="form-text text-muted">Opcional</small>
+                </div>
+                <div class="form-group">
+                    <label for="telefone2">Telefone 2:</label>
+                    <input class="form-control" type="tel" id="telefone2" name="tel" onkeypress="mascaraTel(this)">
+                    <small class="form-text text-muted">Opcional</small>
+                </div>
+                <div class="form-group">
+                    <label for="contato">Contato:</label>
+                    <input class="form-control" type="text" id="contato" name="contato">
+                    <small class="form-text text-muted">Informe um contato.</small>
+                </div>
+                <div class="form-group">
+                    <label for="celular">Celular:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="cel" id="celular" name="celular"
+                        onkeypress="mascaraTel(this)">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="email" id="email" name="email">
+                    <small class="form-text text-muted">"Digite seu melhor e-mail"</small>
+                </div>
+                <h5>Documentos</h5>
+                <div class="form-group">
+                    <label for="cpf">CPF: </label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" maxlength="11" type="text" id="cpf" name="cpf">
+                    <small class="form-text text-muted">Somente números</small>
+                </div>
+                <div id="error" class="alert alert-danger" style="display: none;" role="alert">
+                    <strong>Ops!</strong> CPF inválido!
+                </div>
+
+                <div class="form-group">
+                    <label for="identidade">RG:</label>
+                    <span class="text-danger"></span>
+                    <input required class="form-control" type="text" id="identidade" name="identidade">
+                    <small class="form-text text-muted">"Digite os numeros sem o digíto"</small>
+                </div>
+                <div class="form-group">
+                    <label for="veiculo"> Possui veículo: </label>
+                    <select id="veiculo" name="veiculo" class="form-control">
+                        <option>Selecione</option>
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="habilitacao">Habilitação:</label>
+                    <select id="habilitacao" name="habilitacao" class="form-control">
+                        <option>Selecione</option>
+                        <option>A</option>
+                        <option>AB</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>Não se aplica</option>
+                    </select>
+                </div>
+
+                <div class="FormButton">
+                    <button type="submit" id="Cadastrar" class="btn btn-lg btn-primary" onclick = enviar()>Cadastrar</button>  
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>By Aline_Vicente © 2021</p>
+    </footer>
+    <script src="./rsc/script.js"></script>
+</body>
+
+</html>

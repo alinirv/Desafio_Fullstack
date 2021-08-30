@@ -1,0 +1,122 @@
+{
+    "openapi": "3.0.0",
+  
+    "info": {
+      "title": "API do Sistema de Cadastro",
+      "description": "Essa é a API do Sistema de Cadastro do Banco de Talentos.Realiza o cadastro do candidato e armazena os dados no BD .",
+      "version": "0.0.1"
+    },
+  
+    "servers": [
+      {
+        "url": "http://localhost:7000",
+        "description": "ambiente de desenvolvimento"
+      }
+    ],
+  
+    "paths": {
+      "/register": {
+        "post": {
+          "summary": "Cadastro de candidato",
+          "description": "Rota de cadastro de usuário, recebe: cargoPretendido, nome, dataNascimento, estadoCivil, genero, logradouro, numeroLogradouro, bairro, localidade, cep, uf, telefone1, telefone2, celular, contato, email, identidade, cpf, habilitacao, veiculo ",
+          "tags": ["candidate"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cargoPretendido":{ 
+                      "type": "String"                 
+                    },
+                    "nome":{ 
+                      "type": "String"
+                    },
+                    "dataNascimento":{ 
+                      "type": "String"
+                    },
+                    "estadoCivil":{
+                      "type":"String"
+                    },
+                    "genero":{
+                      "type":"String"
+                    },
+                    "logradouro":{
+                      "type":"String"
+                    },
+                    "numeroLougradouro":{
+                      "type": "Number"
+                    },
+                    "bairro":{
+                      "type":"String"
+                    },
+                    "localidade":{
+                      "type":"String"
+                    },
+                    "cep":{
+                      "type":"String"
+                    },
+                    "uf":{
+                      "type":"String"
+                    },
+                    "telefone1":{
+                      "type":"Number"
+                    },
+                    "telefone2":{
+                      "type":"Number"
+                    },
+                    "celular":{
+                      "type":"Number"
+                    },
+                    "contato":{
+                      "type":"String"
+                    },
+                    "email":{
+                      "type":"String"
+                    },
+                    "identidade":{
+                      "type":"String"
+                    },
+                    "cpf":{
+                      "type":"String"
+                    },
+                    "habilitacao":{
+                      "type":"String"
+                    },
+                    "veiculo":{
+                      "type":"String"
+                    }
+                  }
+                },
+                "examples": {
+                  "Candidato": {
+                    "value": {
+                      "cargoPretendido":"Analista de Desenvolvimento",
+                      "nome":"Jorge Silva",
+                      "dataNascimento":"08/06/1984",
+                      "estadoCivil":"casado",
+                      "genero":"masculino cis",
+                      "logradouro":"Rua Alameda",
+                      "numeroLogradouro":"65",
+                      "bairro":"Centro",
+                      "localidade":"Santos",
+                      "cep":"13000-000",
+                      "uf": "SP",
+                      "telefone1":"1133758978",
+                      "telefone2":"",
+                      "celular":"11987854783",
+                      "contato":"Rose",
+                      "email":"jorgesilva@gsmail.com",
+                      "identidade":"18365343",
+                      "cpf":"833.583.570-58",
+                      "habilitacao":"AB",
+                      "veiculo":"Carro"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
